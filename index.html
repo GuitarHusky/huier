@@ -24,7 +24,7 @@
             width: 4rem;
             height: 4rem;
             margin: 1rem auto;
-            border: 1px solid white;
+            border: none;
             position: relative;
             transform-style: preserve-3d;
             animation: animateInfo 5s linear infinite;
@@ -56,42 +56,42 @@
         .z_1 {
             background-color: white;
             transform: translatez(2rem);
-            background-image: url(./code/1.jpg);
+            background-image: url(./code/5.png);
             background-size: contain;
         }
         
         .z_2 {
             background-color: red;
             transform: translatez(-2rem);
-            background-image: url(./code/2.jpg);
+            background-image: url(./code/5.png);
             background-size: contain;
         }
         
         .z_3 {
             background-color: orange;
             transform: rotatey(90deg) translatez(2rem);
-            background-image: url(./code/3.jpg);
+            background-image: url(./code/5.png);
             background-size: contain;
         }
         
         .z_4 {
             background-color: yellow;
             transform: rotatey(90deg) translatez(-2rem);
-            background-image: url(./code/1.jpg);
+            background-image: url(./code/5.png);
             background-size: contain;
         }
         
         .z_5 {
             background-color: green;
             transform: rotatex(90deg) translatez(2rem);
-            background-image: url(./code/2.jpg);
+            background-image: url(./code/5.png);
             background-size: contain;
         }
         
         .z_6 {
             background-color: blue;
             transform: rotatex(90deg) translatez(-2rem);
-            background-image: url(./code/3.jpg);
+            background-image: url(./code/5.png);
             background-size: contain;
         }
         
@@ -133,7 +133,7 @@
             word-wrap: break-word;
             word-break: break-all;
             overflow: hidden;
-            background-image: url(./code/2.jpg);
+            background-image: url(./code/5.png);
             background-size: contain;
         }
         
@@ -225,12 +225,14 @@
 </head>
 
 <body>
-    <div class="mp3" id="mp3play">
+    <!-- <div class="mp3" id="mp3play">
         <img src="./code/mp3.jpg" alt="">
-    </div>
-    <audio id="audio1" controls="controls" munted style="opacity: 0;"> 
+    </div> -->
+    <!-- <audio id="audio1" controls="controls" munted style="opacity: 0;"> 
         <source src="http://m10.music.126.net/20200222194203/05582f698345c4c799de6a189e0ef2cc/ymusic/5152/5552/030c/f860fa842eb8201274264f2d9eda6139.mp3" type="audio/mpeg" />
-    </audio>
+    </audio> -->
+    <!-- <embed src="背景音乐网址" hidden="true" autostart="true" loop="true"> -->
+    <iframe style="position: fixed;bottom: 0;margin:0 auto;z-index: 999;" frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="https://music.163.com/outchain/player?type=2&id=1460682363&auto=1&height=66"></iframe>
     <div class="center">
         <div class="z_1 mian"></div>
         <div class="z_2 mian"></div>

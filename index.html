@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1 user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+        
+        .center {
+            width: 4rem;
+            height: 4rem;
+            margin: 1rem auto;
+            border: 1px solid white;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: animateInfo 5s linear infinite;
+        }
+        
+        @keyframes animateInfo {
+            from {
+                transform: rotatey(0deg) rotatex(0deg);
+            }
+            to {
+                transform: rotatey(360deg) rotatex(360deg);
+            }
+        }
+        
+        .mian {
+            position: absolute;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 20%;
+            opacity: 0.7;
+        }
+        
+        .mian img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .z_1 {
+            background-color: white;
+            transform: translatez(2rem);
+            background-image: url(./code/1.jpg);
+            background-size: contain;
+        }
+        
+        .z_2 {
+            background-color: red;
+            transform: translatez(-2rem);
+            background-image: url(./code/2.jpg);
+            background-size: contain;
+        }
+        
+        .z_3 {
+            background-color: orange;
+            transform: rotatey(90deg) translatez(2rem);
+            background-image: url(./code/3.jpg);
+            background-size: contain;
+        }
+        
+        .z_4 {
+            background-color: yellow;
+            transform: rotatey(90deg) translatez(-2rem);
+            background-image: url(./code/1.jpg);
+            background-size: contain;
+        }
+        
+        .z_5 {
+            background-color: green;
+            transform: rotatex(90deg) translatez(2rem);
+            background-image: url(./code/2.jpg);
+            background-size: contain;
+        }
+        
+        .z_6 {
+            background-color: blue;
+            transform: rotatex(90deg) translatez(-2rem);
+            background-image: url(./code/3.jpg);
+            background-size: contain;
+        }
+        
+        .mp3 {
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            overflow: hidden;
+            position: fixed;
+            right: 0.2rem;
+            top: 0.5rem;
+            animation: animateMp3 5s linear infinite;
+        }
+        
+        .mp3 img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        
+        @keyframes animateMp3 {
+            from {
+                transform: rotatey(0deg) rotatex(0deg);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+        
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4rem;
+            text-align: center;
+            font-size: 0.3rem;
+            color: #FFFFFF;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow: hidden;
+            background-image: url(./code/2.jpg);
+            background-size: contain;
+        }
+        
+        .footer img {
+            width: 100%;
+            display: block;
+        }
+        
+        .rainbow {
+            color: transparent;
+            font-size: 0.5rem;
+            text-transform: uppercase;
+            font-family: sans-serif;
+            font-weight: bold;
+            line-height: 1em;
+        }
+        
+        .rainbow span {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .rainbow span::before,
+        .rainbow span::after {
+            width: 100%;
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+            animation: animate 0.8s infinite alternate;
+            filter: opacity(0);
+            z-index: var(--n);
+            height: calc(100% - 10% * var(--n));
+            animation-delay: calc(0.8s - 0.1s * var(--n));
+        }
+        
+        .rainbow span:nth-child(1)::before {
+            color: orchid;
+            --n: 1;
+        }
+        
+        .rainbow span:nth-child(1)::after {
+            color: mediumpurple;
+            --n: 2;
+        }
+        
+        .rainbow span:nth-child(2)::before {
+            color: deepskyblue;
+            --n: 3;
+        }
+        
+        .rainbow span:nth-child(2)::after {
+            color: cyan;
+            --n: 4;
+        }
+        
+        .rainbow span:nth-child(3)::before {
+            color: mediumspringgreen;
+            --n: 5;
+        }
+        
+        .rainbow span:nth-child(3)::after {
+            color: yellow;
+            --n: 6;
+        }
+        
+        .rainbow span:nth-child(4)::before {
+            color: gold;
+            --n: 7;
+        }
+        
+        .rainbow span:nth-child(4)::after {
+            color: tomato;
+            --n: 8;
+        }
+        
+        @keyframes animate {
+            from {
+                filter: opacity(0);
+            }
+            to {
+                filter: opacity(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mp3" id="mp3play">
+        <img src="./code/mp3.jpg" alt="">
+    </div>
+    <audio id="audio1" controls="controls" munted style="opacity: 0;"> 
+        <source src="http://m10.music.126.net/20200222194203/05582f698345c4c799de6a189e0ef2cc/ymusic/5152/5552/030c/f860fa842eb8201274264f2d9eda6139.mp3" type="audio/mpeg" />
+    </audio>
+    <div class="center">
+        <div class="z_1 mian"></div>
+        <div class="z_2 mian"></div>
+        <div class="z_3 mian"></div>
+        <div class="z_4 mian"></div>
+        <div class="z_5 mian"></div>
+        <div class="z_6 mian"></div>
+    </div>
+
+    <div class="footer rainbow" id="footer">
+        最美的彩虹,最美的你
+        <span data-text="最美的彩虹,最美的你">最美的彩虹,最美的你</span>
+        <span data-text="最美的彩虹,最美的你">最美的彩虹,最美的你</span>
+        <span data-text="最美的彩虹,最美的你">最美的彩虹,最美的你</span>
+        <span data-text="最美的彩虹,最美的你">最美的彩虹,最美的你</span>
+    </div>
+    <script>
+        function resize() {
+            //UI设计师图的尺寸宽度
+            var dw = 750;
+            //屏幕宽度
+            var cw = document.documentElement.clientWidth;
+            console.log("当前屏幕宽度" + cw);
+            //一个rem=100px,不同的屏幕会根据屏幕的比例系数来变化
+            var rem = cw / dw * 100;
+            //最小屏幕设置,安卓最小屏幕宽度240px
+            if (rem <= 32) {
+                rem = 32;
+            }
+            document.documentElement.style.fontSize = rem + "px";
+        }
+        resize();
+        window.onresize = function() {
+            resize();
+        }
+        document.getElementById("mp3play").addEventListener('touchstart', function() {
+            document.getElementById('audio1').play()
+        })
+    </script>
+</body>
+
+</html>
